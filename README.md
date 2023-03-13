@@ -1,16 +1,16 @@
 # KsDumper-11
 https://user-images.githubusercontent.com/78676320/213967527-ba0d435d-9d92-467d-bd9f-4e85f947dfa0.mp4
 
-## ¹ØÓÚv1.2_mod
-Ôö¼Ó×ÓÄ£¿éµÄµ¼³ö¹¦ÄÜ£º
-![](https://ibb.co/Yy4rVrb)
+## å…³äºv1.2_mod
+å¢åŠ å­æ¨¡å—çš„å¯¼å‡ºåŠŸèƒ½ï¼š
+![](https://i.ibb.co/b2jfGf7/image.png)
 
-¸Ã°æ±¾ÒÑ[KsDumper11](https://github.com/mastercodeon314/KsDumper-11/tree/master/KsDumper11)Îª»ù´¡£¬¸´ÖÆ[KsDumper by GEEKiDos forked version](https://github.com/GEEKiDoS/KsDumper)µÄÏà¹ØÂß¼­£¬À´´ï³É
-win11ÉÏ¿ÉÒÔÊ¹ÓÃ£¬²»½¨ÒéÊ¹ÓÃÕâ¸ö°æ±¾£¬KsDumper11ÓĞ¼Æ»®ÔÚÏÂÒ»¸öRelease°æ±¾Ìí¼Ó¸Ã¹¦ÄÜ¡£
+è¯¥ç‰ˆæœ¬å·²[KsDumper11](https://github.com/mastercodeon314/KsDumper-11/tree/master/KsDumper11)ä¸ºåŸºç¡€ï¼Œå¤åˆ¶[KsDumper by GEEKiDos forked version](https://github.com/GEEKiDoS/KsDumper)çš„ç›¸å…³é€»è¾‘ï¼Œæ¥è¾¾æˆ
+win11ä¸Šå¯ä»¥ä½¿ç”¨ï¼Œä¸å»ºè®®ä½¿ç”¨è¿™ä¸ªç‰ˆæœ¬ï¼ŒKsDumper11æœ‰è®¡åˆ’åœ¨ä¸‹ä¸€ä¸ªReleaseç‰ˆæœ¬æ·»åŠ è¯¥åŠŸèƒ½ã€‚
 
-Èç¹ûÒªÊ¹ÓÃÓĞÈçÏÂÎÊÌâĞèÒª×¢Òâ£º
-1. ÓĞÒ»¶¨¼¸ÂÊÀ¶ÆÁ£¬Õâ¸öÊÇÖ®Ç°modµÄÊµÏÖ¾ÍÓĞµÄÎÊÌâ£¬Ê¹ÓÃÇ°ÇëĞ¡ĞÄ
-2. ĞèÒª½øÈë¿ÉÖ´ĞĞ³ÌĞòÄ¿Â¼ÔËĞĞ³ÌĞò£¬ÓÉÓÚÒ»Ğ©ÔËĞĞÎÊÌâÎÒ°Ñ¾ø¶ÔÂ·¾¶µÄÂß¼­É¾³ıÁË£¬ÏÖÔÚÖ»ÄÜÔÚÕıÈ·µÄÏà¶ÔÂ·¾¶ÏÂ²ÅÄÜÖ´ĞĞ¡£
+å¦‚æœè¦ä½¿ç”¨æœ‰å¦‚ä¸‹é—®é¢˜éœ€è¦æ³¨æ„ï¼š
+1. æœ‰ä¸€å®šå‡ ç‡è“å±ï¼Œè¿™ä¸ªæ˜¯ä¹‹å‰modçš„å®ç°å°±æœ‰çš„é—®é¢˜ï¼Œä½¿ç”¨å‰è¯·å°å¿ƒ
+2. éœ€è¦è¿›å…¥å¯æ‰§è¡Œç¨‹åºç›®å½•è¿è¡Œç¨‹åºï¼Œç”±äºä¸€äº›è¿è¡Œé—®é¢˜æˆ‘æŠŠç»å¯¹è·¯å¾„çš„é€»è¾‘åˆ é™¤äº†ï¼Œç°åœ¨åªèƒ½åœ¨æ­£ç¡®çš„ç›¸å¯¹è·¯å¾„ä¸‹æ‰èƒ½æ‰§è¡Œã€‚
 
 ## Whats new v1.2
 + KsDumper will now try and start the driver using the default kdu exploit provider #1 (RTCore64.sys)
