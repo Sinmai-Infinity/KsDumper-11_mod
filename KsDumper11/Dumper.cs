@@ -118,6 +118,8 @@ namespace KsDumper11
             }
             this.processList.HeaderStyle = ColumnHeaderStyle.Clickable;
             this.processList.ColumnWidthChanging += this.processList_ColumnWidthChanging;
+            this.moduleList.HeaderStyle = ColumnHeaderStyle.Clickable;
+            this.moduleList.ColumnWidthChanging += this.moudleList_ColumnWidthChanging;
             this.driver = new DriverInterface("\\\\.\\KsDumper");
             this.dumper = new ProcessDumper(this.driver);
 
@@ -162,6 +164,13 @@ namespace KsDumper11
         {
             Console.Write("Column Resizing");
             e.NewWidth = this.processList.Columns[e.ColumnIndex].Width;
+            e.Cancel = true;
+        }
+
+        private void moudleList_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
+        {
+            Console.Write("Column Resizing");
+            e.NewWidth = this.moduleList.Columns[e.ColumnIndex].Width;
             e.Cancel = true;
         }
 
@@ -305,8 +314,68 @@ namespace KsDumper11
             this.DumpProcess(targetProcess);
         }
 
-        // Token: 0x0600001A RID: 26 RVA: 0x00002520 File Offset: 0x00000720
-        private void Logger_OnLog(string message)
+        private void processList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (processList.SelectedIndices.Count == 0)
+                return;
+
+            if (driver.HasValidHandle())
+            {
+                if (driver.GetModuleSummaryList((processList.SelectedItems[0].Tag as ProcessSummary).ProcessId, out ModuleSummary[] result) > 0)
+                {
+                    moduleList.LoadModules(result);
+                }
+                else
+                {
+                    MessageBox.Show("Unable to retrieve process list !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void dumpThisModuleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (driver.HasValidHandle())
+            {
+                ProcessSummary targetProcess = processList.SelectedItems[0].Tag as ProcessSummary;
+                ModuleSummary targetModule = moduleList.SelectedItems[0].Tag as ModuleSummary;
+
+                Task.Run(() =>
+                {
+
+                    if (dumper.DumpModule(targetProcess, targetModule, out PEFile peFile))
+                    {
+                        Invoke(new Action(() =>
+                        {
+                            using (SaveFileDialog sfd = new SaveFileDialog())
+                            {
+                                sfd.FileName = targetModule.ModuleFileName.Replace(".exe", "_dump.exe").Replace(".dll", "_dump.dll");
+                                sfd.Filter = "Portable Executable File (.exe, .dll)|*.exe,*.dll";
+
+                                if (sfd.ShowDialog() == DialogResult.OK)
+                                {
+                                    peFile.SaveToDisk(sfd.FileName);
+                                    Logger.Log("Saved at '{0}' !", sfd.FileName);
+                                }
+                            }
+                        }));
+                    }
+                    else
+                    {
+                        Invoke(new Action(() =>
+                        {
+                            MessageBox.Show("Unable to dump target module !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }));
+                    }
+                });
+            }
+            else
+            {
+                MessageBox.Show("Unable to communicate with driver ! Make sure it is loaded.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+    // Token: 0x0600001A RID: 26 RVA: 0x00002520 File Offset: 0x00000720
+    private void Logger_OnLog(string message)
         {
             this.logsTextBox.Invoke(new Action(delegate ()
             {

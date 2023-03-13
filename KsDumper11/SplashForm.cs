@@ -363,8 +363,7 @@ namespace KsDumper11
 
             string logPath = logFolder + $"\\driverLoading_ProviderID_{providerID}.log";
 
-            string args = " /c " + Environment.CurrentDirectory + $"\\Driver\\kdu.exe -prv {providerID} -map .\\Driver\\KsDumperDriver.sys > " + "\"" + logPath + "\"";
-
+            string args = "/c "+ $".\\Driver\\kdu.exe -prv {providerID} -map .\\Driver\\KsDumperDriver.sys > " + "\"" + logPath + "\"";
             ProcessStartInfo inf = new ProcessStartInfo("cmd")
             {
                 Arguments = args,
