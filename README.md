@@ -35,6 +35,17 @@ https://github.com/mastercodeon314/KsDumper-11/assets/78676320/9452970c-27cf-44d
 
 ![KsDumper v1.3 Provider Selector window](https://github.com/mastercodeon314/KsDumper-11/assets/78676320/c683b753-774b-49f0-81ca-76ed2f4dd09b)
 
+## 关于v1.2_mod
+增加子模块的导出功能：
+![](https://i.ibb.co/b2jfGf7/image.png)
+
+该版本已[KsDumper11](https://github.com/mastercodeon314/KsDumper-11/tree/master/KsDumper11)为基础，复制[KsDumper by GEEKiDos forked version](https://github.com/GEEKiDoS/KsDumper)的相关逻辑，来达成
+win11上可以使用，不建议使用这个版本，KsDumper11有计划在下一个Release版本添加该功能。
+
+如果要使用有如下问题需要注意：
+1. 有一定几率蓝屏，这个是之前mod的实现就有的问题，使用前请小心
+2. 需要进入可执行程序目录运行程序，由于一些运行问题我把绝对路径的逻辑删除了，现在只能在正确的相对路径下才能执行。
+
 ## Whats new v1.2
 + KsDumper will now try and start the driver using the default kdu exploit provider #1 (RTCore64.sys)
 + If the default provider does not work, KsDumper will scan all kdu providers and save each one that works into a list.

@@ -19,7 +19,10 @@ namespace KsDumper11.Utility
 		[DllImport("kernel32.dll")]
 		public static extern int GetLongPathName(string path, StringBuilder pszPath, int cchPath);
 
-		public static readonly int FILE_DEVICE_UNKNOWN = 34;
+        [DllImport("Kernel32.dll")]
+        public extern static int FormatMessage(int flag, ref IntPtr source, int msgid, int langid, ref string buf, int size, ref IntPtr args);
+
+        public static readonly int FILE_DEVICE_UNKNOWN = 34;
 
 		public static readonly int METHOD_BUFFERED = 0;
 
